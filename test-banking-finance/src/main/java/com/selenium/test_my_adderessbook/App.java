@@ -17,7 +17,7 @@ public class App
     public static void main( String[] args ) throws InterruptedException, IOException
     {
         //load driver or set location of driver
-    	System.setProperty("webdriver.chrome.driver", "/home/praveen/Downloads/chromedriver_linux64/chromedriver");
+    	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     	 
     	//object of chrome options
     	ChromeOptions chromeOptions = new ChromeOptions();
