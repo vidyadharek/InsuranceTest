@@ -28,20 +28,28 @@ public class App
     	System.out.println("selenium test case started");
     	
     	// open the web browser and enter application url
-    	driver.get("https://facebook.com");
+    	driver.get("http://13.115.251.27:8081/");
     	
     	//wait for page to load
     	driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     	
-    	driver.findElement(By.id("email")).sendKeys("9116422139");
+    	WebElement link = driver.findElement(By.cssSelector("a.nav-link[href='contact.html']"));
+	    link.click();
+	    Thread.sleep(5000);
+	    
+	    driver.findElement(By.id("inputName")).sendKeys("TestUser");
 	    
     	Thread.sleep(5000);
 	    
-    	driver.findElement(By.id("pass")).sendKeys("8874410735");
+    	driver.findElement(By.id("inputNumber")).sendKeys("9876543210");
 	    
 	    Thread.sleep(5000);
+	    driver.findElement(By.id("inputMail")).sendKeys("sampleid@email.com");
 	    
-	    driver.findElement(By.id("loginbutton")).click();
+	    Thread.sleep(5000);
+	    driver.findElement(By.id("inputMessage")).sendKeys("Test Message"); 
+	    
+	    driver.findElement(By.class("submit_btn")).click();
     	Thread.sleep(5000);
     	//quite the driver
     	driver.quit();
